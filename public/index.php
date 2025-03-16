@@ -1,21 +1,24 @@
 <?php
-/**
- * Front controller
- * ! /public/index.php
- * * PHP Version: 8.2.12 or greater
- *  ? MySQL Version: 10.4.32-MariaDB or greater*
- *  TODO: FSDAF
- * PHP Version: 8.2.12 or greater
- * MySQL Version: 10.4.32-MariaDB or greater* 
- * 
- * @package DistrictOmni SIS
- */
+// index.php (or similar)
 
- require_once __DIR__ . '/../vendor/autoload.php';
- 
- use App\Core\Application;
- 
- // Instantiate the Application (which will bootstrap everything)
- $app = new Application();
- $app->run();
- 
+// 1. Autoload (if using Composer)
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// 2. Initialize your router
+use App\Core\Router\Router;
+
+$router = new Router();
+
+// 3. Load routes
+$webRoutes = require_once __DIR__ . '/../app/Core/Router/Routes/Web.php';
+$apiRoutes = require_once __DIR__ . '/../app/Core/Router/Routes/Api.php';
+
+// Register them (pass $router into the closures)
+$webRoutes($router);
+$apiRoutes($router);
+
+// 4. Dispatch
+$method = $_SERVER['REQUEST_METHOD'];
+$uri    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+$router->dispatch($method, $uri);
