@@ -1,6 +1,7 @@
 <?php
-
 namespace App\Core\Router;
+
+use App\Core\Middleware\AuthMiddleware;
 
 class Router
 {
@@ -50,20 +51,26 @@ class Router
     {
         $method = strtoupper($method);
         $handler = $this->routes[$method][$uri] ?? null;
-
+    
         if (!$handler) {
             header("HTTP/1.0 404 Not Found");
             echo "404 Not Found";
             return;
         }
-
+    
+        // Skip auth check for login routes
+        if (!in_array($uri, ['/auth/login', '/api/login', '/api/register'])) {
+            $user = AuthMiddleware::handle();
+        }
+    
         if (is_callable($handler)) {
             return call_user_func($handler);
         }
-
+    
         // If the handler is [ControllerClass, 'method']
         [$class, $action] = $handler;
         $controller = new $class();
         return $controller->$action();
     }
+    
 }
