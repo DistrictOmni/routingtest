@@ -1,19 +1,67 @@
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="{ isPasswordVisible: false }">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        .container { width: 300px; margin: 0 auto; }
-    </style>
+  <meta charset="UTF-8" />
+  <!-- Prevent zooming but allow scrolling -->
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" 
+  />
+  <title>Unified Login</title>
+  
+  <!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font Awesome Latest CDN -->
+<link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+
+/>
+  
+  <!-- Alpine.js (for interactivity) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" 
+    defer
+  ></script>
 </head>
-<body>
-auth layout
-    <div class="container">
-        <?php echo $content ?? ''; // Injected Content ?>
+<body class="bg-gray-100">
+
+  <!-- HEADER (Fixed) -->
+  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between py-4 px-4">
+      <!-- Logo / Company Name -->
+      <h1 class="text-xl font-bold text-indigo-600">
+        My Company
+      </h1>
     </div>
+  </header>
+  <!-- END HEADER -->
+
+  <!-- MAIN CONTENT (Center between header and footer) -->
+  <!-- Adjust pt-20 and pb-16 to match header/footer heights -->
+  <main class="flex flex-col items-center justify-center min-h-screen pt-20 pb-16 relative z-0">
+    
+    <!--  CARD -->
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md mx-4">
+    <?php echo $content ?? ''; // Injected Content ?>
+
+    </div>
+    <!-- END LOGIN CARD -->
+
+  </main>
+  <!-- END MAIN CONTENT -->
+
+  <!-- FOOTER (Fixed) -->
+  <footer class="fixed bottom-0 left-0 w-full bg-white shadow z-50">
+    <div class="max-w-screen-xl mx-auto py-2 px-4 flex items-center justify-center">
+      <p class="text-gray-500 text-sm">&copy; 2023 My Company. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
 
 </body>
 </html>

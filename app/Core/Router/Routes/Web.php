@@ -17,7 +17,7 @@ return function (Router $router) {
 
     $router->get('/auth/login', function () {
         // This uses the dedicated Auth helper to load "Login.php" with "AuthLayout.php"
-        renderAuthView('Login');
+        renderAuthView('LoginView');
     });
 
     $router->get('/dashboard', function () {
