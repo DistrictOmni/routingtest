@@ -19,7 +19,8 @@ class AuthService
     public function __construct(Database $db)
     {
         $this->db = $db;
-        $this->jwtSecret = getenv('JWT_SECRET') ?: 'fallback_secret';
+// AuthService.php
+$this->jwtSecret = 'my_super_secret_key';
 
     }
     /**

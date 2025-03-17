@@ -16,7 +16,7 @@ function renderSecuredView(string $moduleName, string $viewName, string $title, 
     $viewPath   = __DIR__ . "/../../Modules/{$moduleName}/Views/{$viewName}.php";
     
     // Define the common layout path for secured views
-    $layoutPath = __DIR__ . "/../Auth/Views/SecuredLayout.php";
+    $layoutPath = __DIR__ . "/../Auth/Views/Layouts/Secured/SecuredLayout.php";
 
     // Merge title into data array
     $data['title'] = $title;

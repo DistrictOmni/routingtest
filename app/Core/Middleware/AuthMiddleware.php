@@ -27,7 +27,8 @@ class AuthMiddleware
 
         try {
             // decode the JWT
-            $decoded = JWT::decode($token, new Key('your_secret_key', 'HS256'));
+// AuthMiddleware.php
+$decoded = JWT::decode($token, new Key('my_super_secret_key', 'HS256'));
 
             // Check if jti exists in the sessions table
             $session = Capsule::table('auth_sessions')
