@@ -87,6 +87,9 @@ $this->jwtSecret = 'my_super_secret_key';
 
         $token = JWT::encode($payload, $this->jwtSecret, 'HS256');
 
+        // Assuming expires_at is a string in your response, use Carbon to get a timestamp
+        $expiresAtTimestamp = Carbon::createFromTimestamp($payload['exp'])->timestamp;
+    
         // Save the session in the database
         Session::create([
             'user_id' => $user->id,
@@ -99,6 +102,8 @@ $this->jwtSecret = 'my_super_secret_key';
         return [
             'token' => $token,
             'expires_at' => Carbon::createFromTimestamp($payload['exp'])->toDateTimeString(),
+            'expires_at_timestamp' => $expiresAtTimestamp,  // Add this line
+            'user_id' => $user->id,  // Add this line
         ];
     }
 

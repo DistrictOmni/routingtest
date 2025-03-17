@@ -1,9 +1,16 @@
-<!-- ANALYTICS (HOVER sub-drawer) -->
-<li 
-  class="relative w-full"
-  @mouseenter="openDropdown = 'analyticsDrawer'"
-  @mouseleave="openDropdown = (openDropdown === 'analyticsDrawer') ? null : openDropdown"
->
+<li class="relative w-full" x-data="{
+                openDropdown: null,
+                closeDropdownTimer: null,
+                
+                toggleMenu() {
+                  // Toggle the dropdown visibility when clicked
+                  if (this.openDropdown === 'analyticsDrawer') {
+                    this.openDropdown = null;
+                  } else {
+                    this.openDropdown = 'analyticsDrawer';
+                  }
+                }
+              }" @click="toggleMenu()" @mouseleave="openDropdown = null"></li>
   <!-- Trigger for Analytics Drawer -->
   <div 
     class="flex flex-col items-center justify-center w-full h-20 

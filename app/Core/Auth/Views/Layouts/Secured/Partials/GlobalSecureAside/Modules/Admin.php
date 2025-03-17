@@ -344,271 +344,374 @@
           <span>Overview</span>
         </h2>
         <ul class="space-y-1">
-          <li
-            class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
-            <i class="fas fa-chart-line w-5 text-gray-500"></i>
-            <span>Application Dashboard</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-key w-5 text-gray-500"></i>
-            <span>License Management</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-sync w-5 text-gray-500"></i>
-            <span>App Integration Status</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-heartbeat w-5 text-gray-500"></i>
-            <span>System Health Monitor</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-download w-5 text-gray-500"></i>
-            <span>Update Manager</span>
-          </li>
+        <li>
+    <a
+      href="/admin/application/overview"
+      class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600"
+    >
+      <i class="fas fa-chart-line w-5 text-gray-500"></i>
+      <span>Application Dashboard</span>
+    </a>
+  </li>
+
+  <!-- License Management -->
+  <li>
+    <a
+      href="/admin/application/license-management"
+      class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
+    >
+      <i class="fas fa-key w-5 text-gray-500"></i>
+      <span>License Management</span>
+    </a>
+  </li>
+
+  <!-- App Integration Status -->
+  <li>
+    <a
+      href="/admin/application/integration-status"
+      class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
+    >
+      <i class="fas fa-sync w-5 text-gray-500"></i>
+      <span>App Integration Status</span>
+    </a>
+  </li>
+
+  <!-- System Health Monitor -->
+  <li>
+    <a
+      href="/admin/application/system-health-monitor"
+      class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
+    >
+      <i class="fas fa-heartbeat w-5 text-gray-500"></i>
+      <span>System Health Monitor</span>
+    </a>
+  </li>
+
+  <!-- Update Manager -->
+  <li>
+    <a
+      href="/admin/application/update-manager"
+      class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
+    >
+      <i class="fas fa-download w-5 text-gray-500"></i>
+      <span>Update Manager</span>
+    </a>
+  </li>
         </ul>
 
         <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-          <i class="fas fa-envelope text-blue-500"></i>
-          <span>Email &amp; Communications</span>
-        </h2>
-        <ul class="space-y-1">
-          <!-- Make one of them “featured” (bold & blue). Adjust icons as you like. -->
-          <li
-            class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
-            <i class="fas fa-mail-bulk w-5 text-gray-500"></i>
-            <span>Email Gateway Setup</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-server w-5 text-gray-500"></i>
-            <span>SMTP Credentials</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-globe-americas w-5 text-gray-500"></i>
-            <span>Domain Verification</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-paper-plane w-5 text-gray-500"></i>
-            <span>Outbound Email Policies</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-edit w-5 text-gray-500"></i>
-            <span>Email Template Editor</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-envelope-open-text w-5 text-gray-500"></i>
-            <span>Mass Email Tools</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-bomb w-5 text-gray-500"></i>
-            <span>Bounce &amp; Spam Tracking</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-bell w-5 text-gray-500"></i>
-            <span>Notification Preferences</span>
-          </li>
-        </ul>
+  <i class="fas fa-envelope text-blue-500"></i>
+  <span>Email &amp; Communications</span>
+</h2>
+<ul class="space-y-1">
+  <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+    <a href="/admin/application/email/gateway-setup">
+      <i class="fas fa-mail-bulk w-5 text-gray-500"></i>
+      <span>Email Gateway Setup</span>
+    </a>
+  </li>
+  <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+    <a href="/admin/application/email/domain-verification">
+      <i class="fas fa-globe-americas w-5 text-gray-500"></i>
+      <span>Domain Verification</span>
+    </a>
+  </li>
+  <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+    <a href="/admin/application/email/outbound-policies">
+      <i class="fas fa-paper-plane w-5 text-gray-500"></i>
+      <span>Outbound Email Policies</span>
+    </a>
+  </li>
+  <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+    <a href="/admin/application/email/template-editor">
+      <i class="fas fa-edit w-5 text-gray-500"></i>
+      <span>Email Template Editor</span>
+    </a>
+  </li>
+  <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+    <a href="/admin/application/email/mass-tools">
+      <i class="fas fa-envelope-open-text w-5 text-gray-500"></i>
+      <span>Mass Email Tools</span>
+    </a>
+  </li>
+  <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+    <a href="/admin/application/email/bounce-tracking">
+      <i class="fas fa-bomb w-5 text-gray-500"></i>
+      <span>Bounce &amp; Spam Tracking</span>
+    </a>
+  </li>
+  <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+    <a href="/admin/application/email/notification-preferences">
+      <i class="fas fa-bell w-5 text-gray-500"></i>
+      <span>Notification Preferences</span>
+    </a>
+  </li>
+</ul>
+
       </div>
 
       <!-- COLUMN #2: Integrations & Configuration -->
-      <div>
-        <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-          <i class="fas fa-cogs text-blue-500"></i>
-          <span>Integrations</span>
-        </h2>
-        <ul class="space-y-1">
-          <li
-            class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
-            <i class="fas fa-user-shield w-5 text-gray-500"></i>
-            <span>Single Sign-On (SSO)</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-book-open w-5 text-gray-500"></i>
-            <span>LTI/SCORM Integration</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-key w-5 text-gray-500"></i>
-            <span>OAuth &amp; API Keys</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-sync-alt w-5 text-gray-500"></i>
-            <span>Data Synchronization</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-store w-5 text-gray-500"></i>
-            <span>Custom App Store</span>
-          </li>
-        </ul>
-      </div>
+<div>
+  <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+    <i class="fas fa-cogs text-blue-500"></i>
+    <span>Integrations</span>
+  </h2>
+  <ul class="space-y-1">
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+      <a href="/admin/application/integrations/sso">
+        <i class="fas fa-user-shield w-5 text-gray-500"></i>
+        <span>Single Sign-On (SSO)</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/integrations/lti-scorm">
+        <i class="fas fa-book-open w-5 text-gray-500"></i>
+        <span>LTI/SCORM Integration</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/integrations/oauth-keys">
+        <i class="fas fa-key w-5 text-gray-500"></i>
+        <span>OAuth &amp; API Keys</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/integrations/data-synchronization">
+        <i class="fas fa-sync-alt w-5 text-gray-500"></i>
+        <span>Data Synchronization</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/integrations/custom-store">
+        <i class="fas fa-store w-5 text-gray-500"></i>
+        <span>Custom App Store</span>
+      </a>
+    </li>
+  </ul>
+</div>
 
-      <!-- COLUMN #3: Security & Reporting -->
-      <div>
-        <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-          <i class="fas fa-shield-alt text-blue-500"></i>
-          <span>Security</span>
-        </h2>
-        <ul class="space-y-1">
-          <li
-            class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
-            <i class="fas fa-ban w-5 text-gray-500"></i>
-            <span>App Whitelisting/Blacklisting</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-file-alt w-5 text-gray-500"></i>
-            <span>Audit Logs</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-user-lock w-5 text-gray-500"></i>
-            <span>Data Privacy Settings</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-lock w-5 text-gray-500"></i>
-            <span>Encryption Policies</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-balance-scale w-5 text-gray-500"></i>
-            <span>Vendor Risk Management</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-check-circle w-5 text-gray-500"></i>
-            <span>Consent Management</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-exclamation-triangle w-5 text-gray-500"></i>
-            <span>Error &amp; Exception Tracking</span>
-          </li>
-          <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-            <i class="fas fa-chart-area w-5 text-gray-500"></i>
-            <span>Trend Analysis</span>
-          </li>
-        </ul>
-      </div>
+<!-- COLUMN #3: Security & Reporting -->
+<div>
+  <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+    <i class="fas fa-shield-alt text-blue-500"></i>
+    <span>Security</span>
+  </h2>
+  <ul class="space-y-1">
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+      <a href="/admin/application/security/whitelist-blacklist">
+        <i class="fas fa-ban w-5 text-gray-500"></i>
+        <span>App Whitelisting/Blacklisting</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/security/audit-logs">
+        <i class="fas fa-file-alt w-5 text-gray-500"></i>
+        <span>Audit Logs</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/security/privacy-settings">
+        <i class="fas fa-user-lock w-5 text-gray-500"></i>
+        <span>Data Privacy Settings</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/security/encryption-policies">
+        <i class="fas fa-lock w-5 text-gray-500"></i>
+        <span>Encryption Policies</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/security/vendor-risk">
+        <i class="fas fa-balance-scale w-5 text-gray-500"></i>
+        <span>Vendor Risk Management</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/security/consent-management">
+        <i class="fas fa-check-circle w-5 text-gray-500"></i>
+        <span>Consent Management</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/security/error-tracking">
+        <i class="fas fa-exclamation-triangle w-5 text-gray-500"></i>
+        <span>Error &amp; Exception Tracking</span>
+      </a>
+    </li>
+    <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+      <a href="/admin/application/security/trend-analysis">
+        <i class="fas fa-chart-area w-5 text-gray-500"></i>
+        <span>Trend Analysis</span>
+      </a>
+    </li>
+  </ul>
+</div>
     </div>
 
   </div>
 
 </div>
 <div x-show="hoveredCategory === 'assets'" style="display: none;">
-          <h2 class="text-2xl font-bold mb-4">Assets</h2>
-          <p class="text-gray-600 mb-6">
-            Manage your district’s assets from acquisition to disposal. This includes everything from hardware and
-            software to textbooks and furniture.
-          </p>
-          <div
-            class="flex-1 overflow-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-800 text-sm">
-            <!-- COLUMN #1: Inventory Management -->
-            <div>
-              <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-                <i class="fas fa-boxes text-blue-500"></i>
-                <span>Inventory</span>
-              </h3>
-              <ul class="space-y-1">
-                <li
-                  class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
-                  <i class="fas fa-tachometer-alt w-5 text-gray-500"></i>
-                  <span>Asset Dashboard</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-upload w-5 text-gray-500"></i>
-                  <span>Add/Import Assets</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-layer-group w-5 text-gray-500"></i>
-                  <span>Asset Categories</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-tags w-5 text-gray-500"></i>
-                  <span>Asset Tagging &amp; RFID Setup</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-map-marker-alt w-5 text-gray-500"></i>
-                  <span>Real-Time Asset Map</span>
-                </li>
-              </ul>
-            </div>
+  <h2 class="text-2xl font-bold mb-4">Assets</h2>
+  <p class="text-gray-600 mb-6">
+    Manage your district’s assets from acquisition to disposal. This includes everything from hardware and
+    software to textbooks and furniture. Below are the advanced configuration options for each section of the asset management system.
+  </p>
+  <div class="flex-1 overflow-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-800 text-sm">
+    
+    <!-- COLUMN #1: Inventory Management -->
+    <div>
+      <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+        <i class="fas fa-boxes text-blue-500"></i>
+        <span>Inventory</span>
+      </h3>
+      <ul class="space-y-1">
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+          <a href="/admin/assets/dashboard">
+            <i class="fas fa-tachometer-alt w-5 text-gray-500"></i>
+            <span>Asset Dashboard</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/import">
+            <i class="fas fa-upload w-5 text-gray-500"></i>
+            <span>Add/Import Assets</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/categories">
+            <i class="fas fa-layer-group w-5 text-gray-500"></i>
+            <span>Asset Categories</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/tagging">
+            <i class="fas fa-tags w-5 text-gray-500"></i>
+            <span>Asset Tagging &amp; RFID Setup</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/map">
+            <i class="fas fa-map-marker-alt w-5 text-gray-500"></i>
+            <span>Real-Time Asset Map</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-            <!-- COLUMN #2: Tracking & Assignment -->
-            <div>
-              <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-                <i class="fas fa-location-arrow text-blue-500"></i>
-                <span>Tracking</span>
-              </h3>
-              <ul class="space-y-1">
-                <li
-                  class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
-                  <i class="fas fa-exchange-alt w-5 text-gray-500"></i>
-                  <span>Device Checkout/Check-in</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-qrcode w-5 text-gray-500"></i>
-                  <span>Barcode/QR Code Management</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-map-signs w-5 text-gray-500"></i>
-                  <span>Location Tracking</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-history w-5 text-gray-500"></i>
-                  <span>Asset Assignment History</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-mobile-alt w-5 text-gray-500"></i>
-                  <span>Mobile Asset Scanning</span>
-                </li>
-              </ul>
-            </div>
+    <!-- COLUMN #2: Tracking & Assignment -->
+    <div>
+      <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+        <i class="fas fa-location-arrow text-blue-500"></i>
+        <span>Tracking</span>
+      </h3>
+      <ul class="space-y-1">
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+          <a href="/admin/assets/checkout">
+            <i class="fas fa-exchange-alt w-5 text-gray-500"></i>
+            <span>Device Checkout/Check-in</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/barcodes">
+            <i class="fas fa-qrcode w-5 text-gray-500"></i>
+            <span>Barcode/QR Code Management</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/location">
+            <i class="fas fa-map-signs w-5 text-gray-500"></i>
+            <span>Location Tracking</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/assignment-history">
+            <i class="fas fa-history w-5 text-gray-500"></i>
+            <span>Asset Assignment History</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/scanning">
+            <i class="fas fa-mobile-alt w-5 text-gray-500"></i>
+            <span>Mobile Asset Scanning</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-            <!-- COLUMN #3: Maintenance, Lifecycle & Reporting -->
-            <div>
-              <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-                <i class="fas fa-tools text-blue-500"></i>
-                <span>Lifecycle</span>
-              </h3>
-              <ul class="space-y-1">
-                <li
-                  class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
-                  <i class="fas fa-wrench w-5 text-gray-500"></i>
-                  <span>Warranty &amp; Repair</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-chart-line w-5 text-gray-500"></i>
-                  <span>Depreciation &amp; Replacement</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-clipboard-check w-5 text-gray-500"></i>
-                  <span>Asset Audits</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-exclamation-circle w-5 text-gray-500"></i>
-                  <span>Loss/Theft Reporting</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-dollar-sign w-5 text-gray-500"></i>
-                  <span>Funding Source Tracking</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-calendar-alt w-5 text-gray-500"></i>
-                  <span>Maintenance Scheduling</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-trash-alt w-5 text-gray-500"></i>
-                  <span>Asset Disposal Management</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-file-export w-5 text-gray-500"></i>
-                  <span>Custom Asset Reporting</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-balance-scale w-5 text-gray-500"></i>
-                  <span>Compliance &amp; Regulatory Reporting</span>
-                </li>
-                <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <i class="fas fa-leaf w-5 text-gray-500"></i>
-                  <span>Environmental Impact Tracking</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <!-- COLUMN #3: Maintenance, Lifecycle & Reporting -->
+    <div>
+      <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+        <i class="fas fa-tools text-blue-500"></i>
+        <span>Lifecycle</span>
+      </h3>
+      <ul class="space-y-1">
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+          <a href="/admin/assets/warranty">
+            <i class="fas fa-wrench w-5 text-gray-500"></i>
+            <span>Warranty &amp; Repair</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/depreciation">
+            <i class="fas fa-chart-line w-5 text-gray-500"></i>
+            <span>Depreciation &amp; Replacement</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/audit">
+            <i class="fas fa-clipboard-check w-5 text-gray-500"></i>
+            <span>Asset Audits</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/loss-theft">
+            <i class="fas fa-exclamation-circle w-5 text-gray-500"></i>
+            <span>Loss/Theft Reporting</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/funding">
+            <i class="fas fa-dollar-sign w-5 text-gray-500"></i>
+            <span>Funding Source Tracking</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/maintenance-schedule">
+            <i class="fas fa-calendar-alt w-5 text-gray-500"></i>
+            <span>Maintenance Scheduling</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/disposal">
+            <i class="fas fa-trash-alt w-5 text-gray-500"></i>
+            <span>Asset Disposal Management</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/reporting">
+            <i class="fas fa-file-export w-5 text-gray-500"></i>
+            <span>Custom Asset Reporting</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/compliance-reporting">
+            <i class="fas fa-balance-scale w-5 text-gray-500"></i>
+            <span>Compliance &amp; Regulatory Reporting</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/assets/environmental-impact">
+            <i class="fas fa-leaf w-5 text-gray-500"></i>
+            <span>Environmental Impact Tracking</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
         <div x-show="hoveredCategory === 'attendance'" style="display: none;">
           <h2 class="text-2xl font-bold mb-4">Attendance</h2>
           <p class="text-gray-600 mb-6">
@@ -646,6 +749,49 @@
                   <span>Role-Based Permissions</span>
                 </li>
               </ul>
+
+              <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+        <i class="fas fa-calendar-check text-blue-500"></i>
+        <span>Attendance Tracking</span>
+      </h3>
+      <ul class="space-y-1">
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+          <a href="/admin/attendance/daily">
+            <i class="fas fa-calendar-day w-5 text-gray-500"></i>
+            <span>Daily Attendance Tracking</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/attendance/periodic">
+            <i class="fas fa-calendar-week w-5 text-gray-500"></i>
+            <span>Periodic Attendance Setup</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/attendance/classroom">
+            <i class="fas fa-chalkboard-teacher w-5 text-gray-500"></i>
+            <span>Classroom Attendance Settings</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/attendance/remote">
+            <i class="fas fa-laptop w-5 text-gray-500"></i>
+            <span>Remote/Hybrid Attendance Tracking</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/attendance/tardy">
+            <i class="fas fa-clock w-5 text-gray-500"></i>
+            <span>Tardy Tracking</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/attendance/excused">
+            <i class="fas fa-user-check w-5 text-gray-500"></i>
+            <span>Excused Absence Management</span>
+          </a>
+        </li>
+      </ul>
             </div>
 
             <!-- COLUMN #2: Monitoring & Administration -->
@@ -757,6 +903,18 @@
                   <i class="fas fa-user-shield w-5 text-gray-500"></i>
                   <span>Role-Based Access Control (RBAC)</span>
                 </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/roles">
+            <i class="fas fa-user-tag w-5 text-gray-500"></i>
+            <span>Manage Roles</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/permissions">
+            <i class="fas fa-lock w-5 text-gray-500"></i>
+            <span>Manage Permissions</span>
+          </a>
+        </li>
                 <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
                   <i class="fas fa-sync w-5 text-gray-500"></i>
                   <span>Group Synchronization</span>
@@ -773,6 +931,12 @@
                   <i class="fas fa-unlock-alt w-5 text-gray-500"></i>
                   <span>Self-Service Password Reset</span>
                 </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/audit">
+            <i class="fas fa-history w-5 text-gray-500"></i>
+            <span>User Activity Audit</span>
+          </a>
+        </li>
               </ul>
             </div>
 
@@ -817,6 +981,50 @@
                   <span>Account Recovery Options</span>
                 </li>
               </ul>
+
+
+              <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+        <i class="fas fa-key text-blue-500"></i>
+        <span>Authentication Methods</span>
+      </h3>
+      <ul class="space-y-1">
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+          <a href="/admin/auth/sso">
+            <i class="fas fa-sign-in-alt w-5 text-gray-500"></i>
+            <span>Single Sign-On (SSO)</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/ldap">
+            <i class="fas fa-server w-5 text-gray-500"></i>
+            <span>LDAP Integration</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/oidc">
+            <i class="fab fa-openid w-5 text-gray-500"></i>
+            <span>OpenID Connect (OIDC)</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/saml">
+            <i class="fab fa-sitemap w-5 text-gray-500"></i>
+            <span>SAML 2.0 Authentication</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/mfa">
+            <i class="fas fa-shield-alt w-5 text-gray-500"></i>
+            <span>Multi-Factor Authentication (MFA)</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/oauth">
+            <i class="fas fa-lock-open w-5 text-gray-500"></i>
+            <span>OAuth 2.0 Integration</span>
+          </a>
+        </li>
+      </ul>
             </div>
 
             <!-- COLUMN #3: Monitoring & Audits -->
@@ -864,6 +1072,49 @@
                   <span>Authentication Error Analytics</span>
                 </li>
               </ul>
+
+              <h3 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+        <i class="fas fa-shield-alt text-blue-500"></i>
+        <span>Security & Compliance</span>
+      </h3>
+      <ul class="space-y-1">
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+          <a href="/admin/auth/password-policy">
+            <i class="fas fa-key w-5 text-gray-500"></i>
+            <span>Password Policy</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/terms">
+            <i class="fas fa-file-alt w-5 text-gray-500"></i>
+            <span>Terms of Service</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/compliance">
+            <i class="fas fa-gavel w-5 text-gray-500"></i>
+            <span>Compliance Settings</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/audit-logs">
+            <i class="fas fa-file-invoice w-5 text-gray-500"></i>
+            <span>Audit Logs</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/encryption">
+            <i class="fas fa-lock w-5 text-gray-500"></i>
+            <span>Data Encryption Settings</span>
+          </a>
+        </li>
+        <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+          <a href="/admin/auth/gdpr">
+            <i class="fas fa-user-shield w-5 text-gray-500"></i>
+            <span>GDPR Compliance</span>
+          </a>
+        </li>
+      </ul>
             </div>
 
           </div>

@@ -1,6 +1,7 @@
 <?php
-// index.php (or similar)
 session_start(); // Start the session BEFORE loading routes or sending output. Not used for auth at all. We use JWT. Used for Toast etc
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 // 1. Autoload (if using Composer)
 require_once __DIR__ . '/../vendor/autoload.php';

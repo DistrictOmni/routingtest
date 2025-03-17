@@ -58,47 +58,9 @@
     <div class="hidden sm:hidden md:hidden lg:hidden xl:block">xl</div>
   </div>
 
-  <!-- Dynamic resolutions -->
-  <div class="mt-2">
-    <div>
-      <strong>Resolution:</strong>
-      <span id="resolution"></span>
-    </div>
-    <div>
-      <strong>Minus header (h-12) and aside (w-20):</strong>
-      <span id="subResolution"></span>
-    </div>
-  </div>
+ 
 </div>
 
-<script>
-  function updateResolution() {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-
-    // Subtract 20px for aside width and 12px for header height
-    const subW = w - 20;
-    const subH = h - 12;
-
-    document.getElementById("resolution").textContent = `${w}x${h}`;
-    document.getElementById("subResolution").textContent = `${subW}x${subH}`;
-  }
-
-  window.addEventListener("resize", updateResolution);
-  // Initialize on load
-  updateResolution();
-</script>
-
-
-<script>
-  function updateResolution() {
-    document.getElementById("resolution").textContent = `${window.innerWidth}x${window.innerHeight}`;
-  }
-
-  window.addEventListener("resize", updateResolution);
-  // Initialize on page load
-  updateResolution();
-</script>
 
 
         <?= $content ?? 'Unable to display dashboard' ?>

@@ -1,24 +1,30 @@
-    <!-- People (HOVER sub-drawer) -->
-    <li class="relative w-full" @mouseenter="openDropdown = 'peopleDrawer'"
-        @mouseleave="openDropdown = (openDropdown === 'peopleDrawer') ? null : openDropdown">
-        <!-- Trigger for People Drawer -->
-        <div class="flex flex-col items-center justify-center w-full h-20 
+<li class="relative w-full" x-data="{
+                openDropdown: null,
+                closeDropdownTimer: null,
+                
+                toggleMenu() {
+                  // Toggle the dropdown visibility when clicked
+                  if (this.openDropdown === 'peopleDrawer') {
+                    this.openDropdown = null;
+                  } else {
+                    this.openDropdown = 'peopleDrawer';
+                  }
+                }
+              }" @click="toggleMenu()" @mouseleave="openDropdown = null">
+  <!-- Trigger -->
+  <div class="flex flex-col items-center justify-center w-full h-20
            p-3 border-l-4 border-transparent cursor-pointer
            text-gray-300 hover:bg-gray-700 hover:text-white
-           hover:border-blue-400 transition-colors" aria-label="People Drawer">
-            <i class="fas fa-users text-2xl" aria-hidden="true"></i>
-            <span class="text-sm mt-1">People</span>
-        </div>
+           hover:border-blue-400 transition-colors" aria-label="Admin Drawer">
+    <i class="fas fa-users text-2xl"></i>
+    <span class="text-sm mt-1">People</span>
+  </div>
 
-        <!-- The Drawer Itself: fixed, extra wide, multi-column -->
-        <div x-show="openDropdown === 'peopleDrawer'" @click.away="openDropdown = null"
-            x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-100"
-            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-            class="fixed top-12 bottom-0 left-20 w-3/4 bg-white shadow-xl z-50 overflow-auto" style="display: none;"
-            role="menu" aria-orientation="vertical" aria-label="People Drawer">
-            <!-- Full-height flex container -->
-            <div class="h-full flex">
+  <!-- Drawer -->
+  <div x-show="openDropdown === 'peopleDrawer'" @click.away="openDropdown = null"
+    @mouseenter="clearTimeout(closeDropdownTimer)" @mouseleave="closeMenu()"
+    class="fixed top-12 bottom-0 left-20 w-3/4 bg-white shadow-xl z-50 overflow-auto" style="display: none;">
+    <div class="h-full flex">
 
                 <!-- LEFT COLUMN (Quick Actions, 100% height) -->
                 <div class="flex-shrink-0 w-80 h-full flex flex-col border-r border-gray-200 

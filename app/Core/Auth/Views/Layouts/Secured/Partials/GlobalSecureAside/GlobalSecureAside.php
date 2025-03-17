@@ -11,7 +11,7 @@
 <?php
      require_once 'Modules/People.php'; 
      require_once 'Modules/Courses.php'; 
-     require_once 'Modules/Health.php'; 
+     require_once 'Modules/Wellness.php'; 
      //require_once 'Modules/SpEd.php'; 
      //require_once 'Modules/Nutrition.php'; 
      //require_once 'Modules/Transportation.php'; 
