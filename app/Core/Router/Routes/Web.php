@@ -10,9 +10,11 @@ use App\Core\Database\Database;
  * /app/Core/Router/Routes/Web.php
  */
 
+
 // Helpers for rendering views
 require_once __DIR__ . '/../../Helpers/AuthView.php';
 require_once __DIR__ . '/../../Helpers/SecuredView.php';
+require_once __DIR__ . '/../../Helpers/SecuredCoreView.php';
 
 return function (Router $router) {
 
@@ -49,6 +51,11 @@ return function (Router $router) {
         // Show a "Logged out" page or redirect to login
         renderAuthView('LoginView', 'Logout');
     });
+
+
+
+
+
 
     $router->get('/dashboard', function () {
         // Ensure session is started.
@@ -102,4 +109,17 @@ return function (Router $router) {
 
         $authController->attemptLogin(); // Handle the form submission
     });
+
+
+
+/**
+ * Admin Routes
+ */
+
+ $router->get('/admin/auth/users', function () {
+    // Possibly check user permissions, etc...
+    // Then show a "Users" management view from the "app/Core/Auth/Views" folder
+    renderSecuredCoreView('AllUsersView', 'User Management');
+});
+
 };

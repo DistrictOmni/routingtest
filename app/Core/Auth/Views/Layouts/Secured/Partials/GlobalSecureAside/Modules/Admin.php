@@ -78,23 +78,21 @@
             <span>System Setup</span>
           </h2>
           <ul class="space-y-1">
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600"
-            >
+            <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
               <i class="fas fa-tools w-5 text-gray-500"></i>
-              <span>Global Configuration</span>
+              <a href="/system-setup/global-configuration" class="flex-1 hover:underline">Global Configuration</a>
             </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
+            <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
               <i class="fas fa-user-shield w-5 text-gray-500"></i>
-              <span>User Roles &amp; Permissions</span>
+              <a href="/admin/auth/users" class="flex-1 hover:underline">User Management</a>
             </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
+            <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+              <i class="fas fa-user-shield w-5 text-gray-500"></i>
+              <a href="/system-setup/user-roles-permissions" class="flex-1 hover:underline">User Roles &amp; Permissions</a>
+            </li>
+            <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
               <i class="fas fa-database w-5 text-gray-500"></i>
-              <span>Database Maintenance</span>
+              <a href="/system-setup/database-maintenance" class="flex-1 hover:underline">Database Maintenance</a>
             </li>
             <!-- More items... -->
           </ul>
