@@ -1,5 +1,5 @@
 <?php
-// File: AuthControllerTest.php
+// File: tests/Auth/AuthControllerTest.php
 
 namespace App\Core\Auth\Controllers;
 
@@ -71,7 +71,7 @@ function setFlashMessage($type, $message) {
 
 /**
  * TestableAuthController extends your real AuthController and overrides the terminate() method.
- * Your real AuthController should call $this->terminate() instead of exit().
+ * Your production AuthController should be updated so that it calls $this->terminate() instead of exit().
  */
 class TestableAuthController extends AuthController {
     protected function terminate($status = 0)

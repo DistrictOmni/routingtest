@@ -4,6 +4,7 @@ namespace App\Core\Auth\Controllers;
 
 use App\Core\Auth\Services\AuthService;
 use Exception;
+
 /**
  * Auth Controller
  * /app/Core/Auth/Controllers/AuthController.php
@@ -33,7 +34,7 @@ class AuthController
             // Show an error or redirect back to /auth/login
             http_response_code(400);
             echo "Email and password are required.";
-            exit;
+            $this->terminate();
         }
 
         try {
@@ -65,14 +66,14 @@ class AuthController
 
             // Then redirect to a secured route
             header('Location: /dashboard');
-            exit;
+            $this->terminate();
         } catch (Exception $e) {
             http_response_code(401);
-             // On failure, store error toast
-        setFlashMessage('error', 'Login error: ' . $e->getMessage());
-        // Then redirect to login
-        header('Location: /auth/login');
-        exit;
+            // On failure, store error toast
+            setFlashMessage('error', 'Login error: ' . $e->getMessage());
+            // Then redirect to login
+            header('Location: /auth/login');
+            $this->terminate();
         }
     }
 
@@ -82,5 +83,16 @@ class AuthController
         // If you set a cookie, you can clear it:
         setcookie('token', '', time() - 3600, '/');
         echo "Logged out!";
+    }
+
+    /**
+     * Terminate the script.
+     * In production, this calls exit(), but in tests you can override this method.
+     *
+     * @param int $status Exit status code.
+     */
+    protected function terminate($status = 0)
+    {
+        exit($status);
     }
 }
