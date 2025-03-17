@@ -3,7 +3,6 @@
 namespace App\Core\Middleware;
 
 use App\Core\Auth\Models\User;
-use App\Core\Database\Database;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -12,7 +11,6 @@ class AuthMiddleware
 {
     public static function handle(): ?User
     {
-        // Check if the Authorization header is present
         $headers = getallheaders();
         if (!isset($headers['Authorization'])) {
             self::redirectToLogin();
@@ -34,9 +32,13 @@ class AuthMiddleware
                 self::redirectToLogin();
             }
 
-            // Fetch the authenticated user
-            return User::find($decoded->sub); // `sub` should be user ID
+            // `sub` is the user ID in the JWT
+            $user = User::find($decoded->sub);
+            if (!$user) {
+                self::redirectToLogin();
+            }
 
+            return $user;
         } catch (\Exception $e) {
             self::redirectToLogin();
         }

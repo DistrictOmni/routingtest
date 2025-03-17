@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class User extends Model
 {
-    protected $table = 'users'; // If the table name differs from default 'users'.
+    protected $table = 'auth_users'; // If the table name differs from default 'users'.
     
     // Optionally define which fields can be mass-assigned:
     protected $fillable = [

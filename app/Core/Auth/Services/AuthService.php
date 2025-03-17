@@ -3,75 +3,63 @@
 namespace App\Core\Auth\Services;
 
 use App\Core\Auth\Models\User;
-use App\Core\Database\Database;
-use PDO;
-
-/**
- * Auth Service
- * /app/Core/Auth/Services/AuthService.php
- * 
- * This service handles user authentication logic.
- * 
- */
+use App\Core\Auth\Models\Session;
+use Firebase\JWT\JWT;
+use Illuminate\Support\Str;
+use Exception;
 
 class AuthService
 {
-    protected Database $db;
-
-    public function __construct(Database $db)
-    {
-        $this->db = $db;
-    }
+    private string $jwtSecret = 'your_secret_key'; // Move to .env in production
 
     /**
-     * Register a new user
+     * Attempt to log in by checking credentials and returning a JWT.
      */
-    public function registerUser(array $data): bool
+    public function attemptLogin(string $email, string $password, string $userAgent, string $ipAddress): array
     {
-        // Example logic: hash password, insert into DB
-        $hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
+        // 1. Retrieve user by email (use Eloquent instead of raw SQL)
+        $user = User::where('email', $email)->first();
 
-        $sql  = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        return $stmt->execute([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'password' => $hashedPassword
+        if (!$user || !password_verify($password, $user->password)) {
+            throw new Exception("Incorrect email or password.");
+        }
+
+        // 2. Generate JWT
+        $jti = Str::random(32);
+        $expiresAt = time() + 3600; // 1 hour expiry
+
+        $payload = [
+            'sub' => $user->id,
+            'jti' => $jti,
+            'exp' => $expiresAt,
+        ];
+
+        $jwt = JWT::encode($payload, $this->jwtSecret, 'HS256');
+
+        // 3. Store JWT in `sessions` table
+        Session::create([
+            'user_id'    => $user->id,
+            'jti'        => $jti,
+            'ip_address' => $ipAddress,
+            'user_agent' => $userAgent,
+            'created_at' => now(),
+            'expires_at' => now()->addHour(),
         ]);
+
+        // 4. Return the JWT token
+        return [
+            'token'      => $jwt,
+            'expires_at' => $expiresAt
+        ];
     }
 
     /**
-     * Login a user by checking credentials
+     * Logout a user by deleting the session (revoking token)
      */
-    public function loginUser(array $credentials): ?User
+    public function logoutUser(?string $jti = null): void
     {
-        $sql  = "SELECT * FROM users WHERE email = :email LIMIT 1";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->execute(['email' => $credentials['email']]);
-        
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($row && password_verify($credentials['password'], $row['password'])) {
-            // Return a User instance on successful login
-            return new User(
-                $row['id'],
-                $row['name'],
-                $row['email'],
-                $row['password']
-            );
+        if ($jti) {
+            Session::where('jti', $jti)->delete();
         }
-
-        return null;
-    }
-
-    /**
-     * Logout a user
-     */
-    public function logoutUser(): void
-    {
-        // Example logic: clear session
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-        session_destroy();
     }
 }

@@ -6,7 +6,7 @@
       </div>
 
       <!-- LOGIN FORM -->
-      <form class="space-y-4">
+      <form class="space-y-4" action="login" method="POST">
         
         <!-- Email Field -->
         <div class="relative">
@@ -18,6 +18,7 @@
             <input 
               id="email" 
               type="email" 
+              name="email"
               placeholder="example@domain.com" 
               required
               class="pl-10 pr-4 py-2 w-full border rounded focus:outline-none 
@@ -36,6 +37,7 @@
             <input
               id="password"
               type="password"
+              name="password"
               placeholder="********"
               required
               class="pl-10 pr-10 py-2 w-full border rounded focus:outline-none 

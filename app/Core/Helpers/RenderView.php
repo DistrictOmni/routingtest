@@ -1,5 +1,4 @@
 <?php
-// File: app/Core/Helpers/view.php
 
 /**
  * Render a view inside a layout (or standalone).
@@ -10,7 +9,10 @@
  */
 function renderView(string $viewPath, ?string $layoutPath = null, array $data = [])
 {
-    // Make $data variables available inside the view
+    // Set a default title if not provided
+    $title = $data['title'] ?? 'Default Page Title';
+
+    // Make data variables available inside the view
     extract($data);
 
     // Start buffering the output of the included view
@@ -19,7 +21,7 @@ function renderView(string $viewPath, ?string $layoutPath = null, array $data = 
     // Get the HTML output from the view
     $content = ob_get_clean();
 
-    // If a layout is specified, inject $content into it
+    // If a layout is specified, inject $content and $title into it
     if ($layoutPath) {
         require $layoutPath;
     } else {
