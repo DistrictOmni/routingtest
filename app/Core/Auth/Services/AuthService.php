@@ -25,40 +25,79 @@ class AuthService
     /**
      * Attempt to log in by checking credentials and returning a JWT.
      */
-    public function attemptLogin(string $email, string $password, string $userAgent, string $ipAddress): array
+    public function attemptLogin()
     {
-        // 1. Retrieve user by email (use Eloquent instead of raw SQL)
+        // 1) Read form data
+        $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+
+        if (!$email || !$password) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Email and password are required.']);
+            exit;
+        }
+
+        try {
+            // 2) AuthService returns ['token' => ..., 'expires_at' => ...]
+            $tokenData = $this->attemptLoginWithCredentials(
+                $email,
+                $password,
+                $_SERVER['HTTP_USER_AGENT'] ?? 'unknown',
+                $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0'
+            );
+
+            // 3) Return token + expiry in JSON
+            header('Content-Type: application/json');
+            echo json_encode([
+                'token'      => $tokenData['token'],
+                'expires_at' => $tokenData['expires_at'],
+            ]);
+            exit;
+
+        } catch (Exception $e) {
+            http_response_code(401);
+            echo json_encode(['error' => $e->getMessage()]);
+            exit;
+        }
+    }
+
+    /**
+     * Attempt to log in with credentials and return a JWT.
+     */
+    public function attemptLoginWithCredentials(string $email, string $password, string $userAgent, string $ipAddress): array
+    {
+        // Your logic to authenticate the user and generate JWT token
+        // This is a placeholder implementation
         $user = User::where('email', $email)->first();
 
         if (!$user || !password_verify($password, $user->password)) {
-            throw new Exception("Incorrect email or password.");
+            throw new Exception('Invalid credentials.');
         }
 
-        // 2. Generate JWT
-        $jti = Str::random(32);
-        $expiresAt = time() + 3600; // 1 hour expiry
-
         $payload = [
-            'sub' => $user->id,
-            'jti' => $jti,
-            'exp' => $expiresAt,
+            'iss' => 'your-issuer', // Issuer
+            'sub' => $user->id, // Subject
+            'iat' => time(), // Issued at
+            'exp' => time() + 3600, // Expiration time
+            'jti' => Str::uuid()->toString(), // JWT ID
+            'user_agent' => $userAgent,
+            'ip_address' => $ipAddress,
         ];
 
-        $jwt = JWT::encode($payload, $this->jwtSecret, 'HS256');
+        $token = JWT::encode($payload, $this->jwtSecret, 'HS256');
 
-        // 3. Store JWT in `sessions` table
+        // Save the session in the database
         Session::create([
-            'user_id'    => $user->id,
-            'jti'        => $jti,
+            'user_id' => $user->id,
+            'jti' => $payload['jti'],
             'ip_address' => $ipAddress,
-            'created_at' => Carbon::now(),
-            'expires_at' => Carbon::now()->addHour(),
+            'user_agent' => $userAgent,
+            'expires_at' => Carbon::createFromTimestamp($payload['exp'])->toDateTimeString(),
         ]);
 
-        // 4. Return the JWT token
         return [
-            'token'      => $jwt,
-            'expires_at' => $expiresAt
+            'token' => $token,
+            'expires_at' => Carbon::createFromTimestamp($payload['exp'])->toDateTimeString(),
         ];
     }
 
