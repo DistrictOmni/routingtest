@@ -5,7 +5,11 @@ session_start(); // Start the session BEFORE loading routes or sending output. N
 // 1. Autoload (if using Composer)
 require_once __DIR__ . '/../vendor/autoload.php';
 
-
+use Illuminate\Pagination\Paginator;
+// Set the current page from the query string, defaulting to 1 if not provided.
+Paginator::currentPageResolver(function () {
+    return isset($_GET['page']) ? (int) $_GET['page'] : 1;
+});
 // 2. Initialize your router
 use App\Core\Router\Router;
 

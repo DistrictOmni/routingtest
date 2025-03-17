@@ -29,7 +29,7 @@
   ></script>
 </head>
 <body class="bg-gray-100">
-<?php require __DIR__ . '/../../Views/GlobalFlashMessages.php'; ?>
+<?php require __DIR__ . '/../../../../Views/GlobalFlashMessages.php'; ?>
 
 <div class="fixed top-0 right-0 m-8 p-3 text-xs font-mono text-white h-6 w-6 rounded-full flex items-center justify-center bg-gray-700 sm:bg-pink-500 md:bg-orange-500 lg:bg-green-500 xl:bg-blue-500">
   <div class="block  sm:hidden md:hidden lg:hidden xl:hidden">al</div>

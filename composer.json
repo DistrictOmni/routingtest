@@ -2,7 +2,8 @@
     "require": {
         "illuminate/database": "^12.2",
         "firebase/php-jwt": "^6.11",
-        "ramsey/uuid": "^4.7"
+        "ramsey/uuid": "^4.7",
+        "illuminate/pagination": "^12.2"
     },
     "autoload": {
     "psr-4": {

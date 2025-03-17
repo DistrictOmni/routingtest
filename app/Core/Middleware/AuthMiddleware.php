@@ -57,7 +57,16 @@ $decoded = JWT::decode($token, new Key('my_super_secret_key', 'HS256'));
 
     private static function redirectToLogin()
     {
+        // Ensure session is started
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    
+        // Store the current URI so we can come back to it
+        $_SESSION['intended_url'] = $_SERVER['REQUEST_URI'];
+    
         header("Location: /auth/login");
         exit;
     }
+    
 }

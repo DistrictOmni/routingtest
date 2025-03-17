@@ -12,7 +12,7 @@ require_once __DIR__ . '/RenderView.php';
 function renderAuthView(string $viewName, string $title, array $data = [])
 {
     $viewPath   = __DIR__ . "/../Auth/Views/{$viewName}.php";
-    $layoutPath = __DIR__ . "/../Auth/Views/Auth/AuthLayout.php";
+    $layoutPath = __DIR__ . "/../Auth/Views/Layouts/Auth/AuthLayout.php";
 
     // Merge title into data array
     $data['title'] = $title;

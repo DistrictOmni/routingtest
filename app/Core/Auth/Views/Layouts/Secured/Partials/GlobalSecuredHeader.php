@@ -275,7 +275,7 @@
                             </div>
 
                             <!-- Sign out button -->
-                            <a href="/logout" class="text-sm text-red-600 border border-red-600 rounded-md px-2 py-1
+                            <a href="/auth/logout" class="text-sm text-red-600 border border-red-600 rounded-md px-2 py-1
            hover:bg-red-600 hover:text-white focus:outline-none">
                                 Sign out
                             </a>

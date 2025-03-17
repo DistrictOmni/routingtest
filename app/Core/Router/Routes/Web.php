@@ -5,6 +5,11 @@ use App\Core\Middleware\AuthMiddleware;
 use App\Core\Auth\Controllers\AuthController;
 use App\Core\Auth\Services\AuthService;
 use App\Core\Database\Database;
+
+use App\Core\Auth\Models\Role;
+
+use App\Core\Auth\Models\User;
+
 /**
  * Web Route Definitions
  * /app/Core/Router/Routes/Web.php
@@ -115,11 +120,57 @@ return function (Router $router) {
 /**
  * Admin Routes
  */
-
  $router->get('/admin/auth/users', function () {
     // Possibly check user permissions, etc...
-    // Then show a "Users" management view from the "app/Core/Auth/Views" folder
-    renderSecuredCoreView('AllUsersView', 'User Management');
+
+    // 1) Retrieve pagination parameters (page, per_page) from querystring
+    $page    = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $perPage = isset($_GET['per_page']) ? (int)$_GET['per_page'] : 25;
+
+    // 2) Use Eloquent to fetch paginated users
+    // This returns an instance of Illuminate\Pagination\LengthAwarePaginator
+    $users = User::paginate($perPage, ['*'], 'page', $page);
+
+    // 3) Additional relationships or queries if needed:
+    // e.g. ->with('roles')
+
+    // 4) Pass $users into the view
+    $data = [
+        'users'       => $users,
+        'currentPage' => $users->currentPage(),
+        'totalPages'  => $users->lastPage(),
+        // etc. if you want them explicitly
+    ];
+
+    // 5) Render with your "secured" layout in the Core "AllUsersView.php"
+    renderSecuredCoreView('AllUsersView', 'User Management', $data);
 });
+$router->get('/admin/auth/roles', function () {
+    // Possibly check user permissions, etc...
+
+    // 1) Retrieve pagination parameters (page, per_page) from query string
+    $page    = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $perPage = isset($_GET['per_page']) ? (int)$_GET['per_page'] : 25;
+
+    // 2) Use Eloquent to fetch paginated roles
+    // This returns an instance of Illuminate\Pagination\LengthAwarePaginator
+    $roles = Role::paginate($perPage, ['*'], 'page', $page);
+
+    // 3) Additional relationships if needed:
+    // e.g. $roles->load('permissions');
+
+    // 4) Pass $roles into the view
+    $data = [
+        'roles'       => $roles,
+        'currentPage' => $roles->currentPage(),
+        'totalPages'  => $roles->lastPage(),
+        // etc., if you want them explicitly
+    ];
+
+    // 5) Render with your "secured" layout, pointing to "AllRolesView.php"
+    renderSecuredCoreView('AllRolesView', 'Role Management', $data);
+});
+
+
 
 };

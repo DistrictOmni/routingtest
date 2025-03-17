@@ -47,7 +47,17 @@ class AuthController
             );
     
             // Then redirect to dashboard
-            header('Location: /dashboard');
+// If we saved an intended URL, use it. Otherwise default to /dashboard
+session_start();
+if (!empty($_SESSION['intended_url'])) {
+    $destination = $_SESSION['intended_url'];
+    unset($_SESSION['intended_url']); // clear it so it doesn't persist
+    header("Location: $destination");
+    exit;
+}
+
+// No intended URL? Go to dashboard
+header('Location: /dashboard');
             exit;
     
         } catch (Exception $e) {

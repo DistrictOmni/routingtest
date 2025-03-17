@@ -70,97 +70,110 @@
       <!-- END LEFT COLUMN -->
 
       <!-- RIGHT COLUMNS (grid of analytics categories) -->
-      <div 
-        class="flex-1 overflow-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-800 text-sm"
-      >
-        <!-- COLUMN #1: Dashboards & Real-Time Views -->
-        <div>
-          <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-            <i class="fas fa-tachometer-alt text-blue-500"></i>
-            <span>Dashboards</span>
-          </h2>
-          <ul class="space-y-1">
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600"
-            >
-              <i class="fas fa-chart-line w-5 text-gray-500"></i>
-              <span>Enrollment KPIs</span>
-            </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
-              <i class="fas fa-user-graduate w-5 text-gray-500"></i>
-              <span>Student Success Dashboard</span>
-            </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
-              <i class="fas fa-building w-5 text-gray-500"></i>
-              <span>Dept. &amp; Program Metrics</span>
-            </li>
-            <!-- More items... -->
-          </ul>
-        </div>
+      <div class="flex-1 overflow-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-800 text-sm">
+  <!-- COLUMN #1: Overview -->
+  <div>
+    <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+      <i class="fas fa-tachometer-alt text-blue-500"></i>
+      <span>Overview</span>
+    </h2>
+    <ul class="space-y-1">
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+        <i class="fas fa-chart-line w-5 text-gray-500"></i>
+        <span>Application Dashboard</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-key w-5 text-gray-500"></i>
+        <span>License Management</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-sync w-5 text-gray-500"></i>
+        <span>App Integration Status</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-heartbeat w-5 text-gray-500"></i>
+        <span>System Health Monitor</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-download w-5 text-gray-500"></i>
+        <span>Update Manager</span>
+      </li>
+    </ul>
+  </div>
 
-        <!-- COLUMN #2: Reports & Data Exports -->
-        <div>
-          <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-            <i class="fas fa-file-alt text-blue-500"></i>
-            <span>Reports</span>
-          </h2>
-          <ul class="space-y-1">
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600"
-            >
-              <i class="fas fa-table w-5 text-gray-500"></i>
-              <span>Standard Reports</span>
-            </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
-              <i class="fas fa-database w-5 text-gray-500"></i>
-              <span>Data Warehouse Exports</span>
-            </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
-              <i class="fas fa-chart-area w-5 text-gray-500"></i>
-              <span>Trend Analysis</span>
-            </li>
-            <!-- More items... -->
-          </ul>
-        </div>
+  <!-- COLUMN #2: Integrations & Configuration -->
+  <div>
+    <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+      <i class="fas fa-cogs text-blue-500"></i>
+      <span>Integrations</span>
+    </h2>
+    <ul class="space-y-1">
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+        <i class="fas fa-user-shield w-5 text-gray-500"></i>
+        <span>Single Sign-On (SSO)</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-book-open w-5 text-gray-500"></i>
+        <span>LTI/SCORM Integration</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-key w-5 text-gray-500"></i>
+        <span>OAuth &amp; API Keys</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-sync-alt w-5 text-gray-500"></i>
+        <span>Data Synchronization</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-store w-5 text-gray-500"></i>
+        <span>Custom App Store</span>
+      </li>
+    </ul>
+  </div>
 
-        <!-- COLUMN #3: Advanced Analytics (Predictive, Data Science, etc.) -->
-        <div>
-          <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
-            <i class="fas fa-brain text-blue-500"></i>
-            <span>Advanced Analytics</span>
-          </h2>
-          <ul class="space-y-1">
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600"
-            >
-              <i class="fas fa-robot w-5 text-gray-500"></i>
-              <span>Predictive Models</span>
-            </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
-              <i class="fas fa-chart-pie w-5 text-gray-500"></i>
-              <span>Machine Learning Insights</span>
-            </li>
-            <li 
-              class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer"
-            >
-              <i class="fas fa-project-diagram w-5 text-gray-500"></i>
-              <span>Network &amp; Cohort Analysis</span>
-            </li>
-            <!-- More items... -->
-          </ul>
-        </div>
-        <!-- Additional columns if needed... -->
-      </div>
+  <!-- COLUMN #3: Security & Reporting -->
+  <div>
+    <h2 class="flex items-center text-gray-700 font-bold text-base mb-3 space-x-2">
+      <i class="fas fa-shield-alt text-blue-500"></i>
+      <span>Security</span>
+    </h2>
+    <ul class="space-y-1">
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer font-semibold text-blue-600">
+        <i class="fas fa-ban w-5 text-gray-500"></i>
+        <span>App Whitelisting/Blacklisting</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-file-alt w-5 text-gray-500"></i>
+        <span>Audit Logs</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-user-lock w-5 text-gray-500"></i>
+        <span>Data Privacy Settings</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-lock w-5 text-gray-500"></i>
+        <span>Encryption Policies</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-balance-scale w-5 text-gray-500"></i>
+        <span>Vendor Risk Management</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-check-circle w-5 text-gray-500"></i>
+        <span>Consent Management</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-exclamation-triangle w-5 text-gray-500"></i>
+        <span>Error &amp; Exception Tracking</span>
+      </li>
+      <li class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-chart-area w-5 text-gray-500"></i>
+        <span>Trend Analysis</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
     </div>
   </div>
 </li>
