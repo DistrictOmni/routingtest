@@ -2,7 +2,7 @@
 <html lang="en" x-data="{ 
     openDropdown: null,   /* Single source for any open dropdown/drawer */
     currentStatus: 'Active'
-  }" @keydown.escape.window="openDropdown = null" <!-- Close all on ESC -->
+  }" @keydown.escape.window="openDropdown = null"
 >
 
 <head>
@@ -15,6 +15,8 @@
 
     <!-- Font Awesome (CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    
 </head>
 
 <body class="bg-gray-100 text-gray-900">
@@ -43,13 +45,61 @@
       left-0 sm:left-20
       right-0 overflow-auto bg-gray-50 
     ">
-    <div class="fixed top-0 right-0 m-8 mt-12 p-3 text-xs font-mono text-white h-6 w-6 rounded-full flex items-center justify-center bg-gray-700 sm:bg-pink-500 md:bg-orange-500 lg:bg-green-500 xl:bg-blue-500">
-  <div class="block  sm:hidden md:hidden lg:hidden xl:hidden">al</div>
-  <div class="hidden sm:block  md:hidden lg:hidden xl:hidden">sm</div>
-  <div class="hidden sm:hidden md:block  lg:hidden xl:hidden">md</div>
-  <div class="hidden sm:hidden md:hidden lg:block  xl:hidden">lg</div>
-  <div class="hidden sm:hidden md:hidden lg:hidden xl:block">xl</div>
+    <div
+  class="fixed top-0 right-0 m-8 mt-12 p-3 text-xs font-mono text-white rounded-md flex flex-col bg-gray-700 sm:bg-pink-500 md:bg-orange-500 lg:bg-green-500 xl:bg-blue-500"
+  style="min-width: 4rem;"
+>
+  <!-- Breakpoint indicators -->
+  <div class="flex justify-center space-x-2">
+    <div class="block  sm:hidden md:hidden lg:hidden xl:hidden">al</div>
+    <div class="hidden sm:block  md:hidden lg:hidden xl:hidden">sm</div>
+    <div class="hidden sm:hidden md:block  lg:hidden xl:hidden">md</div>
+    <div class="hidden sm:hidden md:hidden lg:block  xl:hidden">lg</div>
+    <div class="hidden sm:hidden md:hidden lg:hidden xl:block">xl</div>
+  </div>
+
+  <!-- Dynamic resolutions -->
+  <div class="mt-2">
+    <div>
+      <strong>Resolution:</strong>
+      <span id="resolution"></span>
+    </div>
+    <div>
+      <strong>Minus header (h-12) and aside (w-20):</strong>
+      <span id="subResolution"></span>
+    </div>
+  </div>
 </div>
+
+<script>
+  function updateResolution() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    // Subtract 20px for aside width and 12px for header height
+    const subW = w - 20;
+    const subH = h - 12;
+
+    document.getElementById("resolution").textContent = `${w}x${h}`;
+    document.getElementById("subResolution").textContent = `${subW}x${subH}`;
+  }
+
+  window.addEventListener("resize", updateResolution);
+  // Initialize on load
+  updateResolution();
+</script>
+
+
+<script>
+  function updateResolution() {
+    document.getElementById("resolution").textContent = `${window.innerWidth}x${window.innerHeight}`;
+  }
+
+  window.addEventListener("resize", updateResolution);
+  // Initialize on page load
+  updateResolution();
+</script>
+
 
         <?= $content ?? 'Unable to display dashboard' ?>
     </main>

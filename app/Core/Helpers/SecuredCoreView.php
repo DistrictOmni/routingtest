@@ -13,7 +13,7 @@ require_once __DIR__ . '/RenderView.php';
 function renderSecuredCoreView(string $viewName, string $title, array $data = [])
 {
     $viewPath   = __DIR__ . "/../Auth/Views/{$viewName}.php";
-    $layoutPath = __DIR__ . "/../Auth/Views/Secured/Layouts/SecuredLayout.php";
+    $layoutPath = __DIR__ . "/../Auth/Views/Layouts/Secured/SecuredLayout.php";
 
     $data['title'] = $title;
     renderView($viewPath, $layoutPath, $data);
