@@ -7,6 +7,7 @@ use App\Core\Auth\Models\Session;
 use Firebase\JWT\JWT;
 use Illuminate\Support\Str;
 use Exception;
+use Carbon\Carbon;
 
 class AuthService
 {
@@ -41,9 +42,8 @@ class AuthService
             'user_id'    => $user->id,
             'jti'        => $jti,
             'ip_address' => $ipAddress,
-            'user_agent' => $userAgent,
-            'created_at' => now(),
-            'expires_at' => now()->addHour(),
+            'created_at' => Carbon::now(),
+            'expires_at' => Carbon::now()->addHour(),
         ]);
 
         // 4. Return the JWT token
