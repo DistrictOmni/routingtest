@@ -58,19 +58,19 @@ class Router
             return;
         }
     
-        // Skip auth check for login routes
-        if (!in_array($uri, ['/auth/login', '/api/login', '/api/register'])) {
-            $user = AuthMiddleware::handle();
+        // Skip auth check ONLY for the login route
+        if ($uri !== '/auth/login') {
+            $user = AuthMiddleware::handle();  // user is optional or you can store it somewhere
         }
     
         if (is_callable($handler)) {
             return call_user_func($handler);
         }
     
-        // If the handler is [ControllerClass, 'method']
         [$class, $action] = $handler;
         $controller = new $class();
         return $controller->$action();
     }
+    
     
 }
