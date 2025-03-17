@@ -12,13 +12,15 @@ use App\Core\Database\Database;
 
 class AuthService
 {
-    private string $jwtSecret = 'your_secret_key';
+    private string $jwtSecret;
     protected Database $db;
 
     // Define a constructor that expects a Database instance
     public function __construct(Database $db)
     {
         $this->db = $db;
+        $this->jwtSecret = getenv('JWT_SECRET') ?: 'fallback_secret';
+
     }
     /**
      * Attempt to log in by checking credentials and returning a JWT.
