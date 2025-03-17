@@ -68,7 +68,11 @@ class AuthController
             exit;
         } catch (Exception $e) {
             http_response_code(401);
-            echo "Login error: " . $e->getMessage();
+             // On failure, store error toast
+        setFlashMessage('error', 'Login error: ' . $e->getMessage());
+        // Then redirect to login
+        header('Location: /auth/login');
+        exit;
         }
     }
 

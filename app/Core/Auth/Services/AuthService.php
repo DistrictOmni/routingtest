@@ -8,11 +8,18 @@ use Firebase\JWT\JWT;
 use Illuminate\Support\Str;
 use Exception;
 use Carbon\Carbon;
+use App\Core\Database\Database;
 
 class AuthService
 {
-    private string $jwtSecret = 'your_secret_key'; // Move to .env in production
+    private string $jwtSecret = 'your_secret_key';
+    protected Database $db;
 
+    // Define a constructor that expects a Database instance
+    public function __construct(Database $db)
+    {
+        $this->db = $db;
+    }
     /**
      * Attempt to log in by checking credentials and returning a JWT.
      */

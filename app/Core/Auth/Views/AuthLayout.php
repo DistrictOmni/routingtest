@@ -29,6 +29,8 @@
   ></script>
 </head>
 <body class="bg-gray-100">
+<?php require __DIR__ . '/../../Views/GlobalFlashMessages.php'; ?>
+
 
   <!-- HEADER (Fixed) -->
   <header class="fixed top-0 left-0 w-full bg-white shadow z-50">

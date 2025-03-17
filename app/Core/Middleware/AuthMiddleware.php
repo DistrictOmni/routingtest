@@ -11,40 +11,41 @@ class AuthMiddleware
 {
     public static function handle(): ?User
     {
-        $headers = getallheaders();
-        if (!isset($headers['Authorization'])) {
+        // Instead of looking in $headers['Authorization'], read from $_COOKIE
+        if (empty($_COOKIE['token'])) {
             self::redirectToLogin();
         }
-
-        // Extract the JWT token
-        $token = str_replace('Bearer ', '', $headers['Authorization']);
-
+    
+        $token = $_COOKIE['token'];
+    
         try {
-            // Decode the token
             $decoded = JWT::decode($token, new Key('your_secret_key', 'HS256'));
-
-            // Check if `jti` exists in the sessions table
-            $session = Capsule::table('sessions')
+    
+            // Check sessions table for jti
+            $session = Capsule::table('auth_sessions')
                 ->where('jti', $decoded->jti)
                 ->first();
-
+    
             if (!$session) {
                 self::redirectToLogin();
             }
-
-            // `sub` is the user ID in the JWT
+    
+            // sub => user ID
             $user = User::find($decoded->sub);
             if (!$user) {
                 self::redirectToLogin();
             }
-
+    
+            // If successful, return the user
             return $user;
+    
         } catch (\Exception $e) {
             self::redirectToLogin();
         }
-
+    
         return null;
     }
+    
 
     private static function redirectToLogin()
     {

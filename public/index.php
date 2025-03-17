@@ -1,8 +1,10 @@
 <?php
 // index.php (or similar)
+session_start(); // Start the session BEFORE loading routes or sending output. Not used for auth at all. We use JWT. Used for Toast etc
 
 // 1. Autoload (if using Composer)
 require_once __DIR__ . '/../vendor/autoload.php';
+
 
 // 2. Initialize your router
 use App\Core\Router\Router;
@@ -22,3 +24,36 @@ $method = $_SERVER['REQUEST_METHOD'];
 $uri    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $router->dispatch($method, $uri);
+
+
+/**
+ * Set a flash message in $_SESSION.
+ *
+ * @param string $type    e.g. 'success', 'error', 'info', etc.
+ * @param string $message The message text
+ */
+function setFlashMessage(string $type, string $message): void
+{
+    // Ensure 'flash' is an array we can push messages into
+    if (!isset($_SESSION['flash'])) {
+        $_SESSION['flash'] = [];
+    }
+
+    $_SESSION['flash'][] = [
+        'type' => $type,
+        'message' => $message,
+    ];
+}
+
+/**
+ * Retrieve and clear all flash messages.
+ *
+ * @return array An array of messages, each with ['type', 'message']
+ */
+function getFlashMessages(): array
+{
+    // Return and clear
+    $messages = $_SESSION['flash'] ?? [];
+    unset($_SESSION['flash']); // Clear them so they don’t persist
+    return $messages;
+}
