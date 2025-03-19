@@ -1,0 +1,249 @@
+{
+    "Academic Planning": [
+      {
+        "permission_name": "View Academic Plans",
+        "options": ["No", "Yes", "Read-Only"]
+      },
+      {
+        "permission_name": "Edit Academic Plans",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Admin": [
+      {
+        "permission_name": "Manage Users",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Logs",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Advanced Reporting": [
+      {
+        "permission_name": "Generate Report",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "Export Report",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Attendance": [
+      {
+        "permission_name": "Mark Attendance",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Attendance Records",
+        "options": ["No", "Yes", "Read-Only"]
+      }
+    ],
+    "District": [
+      {
+        "permission_name": "Manage District Settings",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View District Overview",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Enrollment/Program Queues": [
+      {
+        "permission_name": "Manage Enrollment Queue",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Enrollment Data",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Export": [
+      {
+        "permission_name": "Export Data",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "Export Reports",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Facilities Management": [
+      {
+        "permission_name": "Manage Facilities",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Facility Usage",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Families": [
+      {
+        "permission_name": "Manage Family Information",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Family Records",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Gradebook": [
+      {
+        "permission_name": "Grade Assignments",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Grades",
+        "options": ["No", "Yes", "Read-Only"]
+      }
+    ],
+    "Grading": [
+      {
+        "permission_name": "Update Grades",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Grading Reports",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Import": [
+      {
+        "permission_name": "Import Data",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "Import Reports",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Program Category": [
+      {
+        "permission_name": "Manage Program Categories",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Program Categories",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Reporting": [
+      {
+        "permission_name": "Run Reports",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Report History",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "School Setup": [
+      {
+        "permission_name": "Manage School Settings",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View School Setup",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "School Specific Pages Only": [
+      {
+        "permission_name": "Access School Pages",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Schools": [
+      {
+        "permission_name": "Add Schools",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "Delete Schools",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Setup Lists": [
+      {
+        "permission_name": "Manage Setup Lists",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Setup Lists",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Staff": [
+      {
+        "permission_name": "Manage Staff Information",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Staff Records",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "State Reporting": [
+      {
+        "permission_name": "Generate State Reports",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View State Reporting Data",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Student Behavior": [
+      {
+        "permission_name": "Manage Behavior Data",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Behavior Records",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Students": [
+      {
+        "permission_name": "Add Student Records",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Student Information",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Test Management": [
+      {
+        "permission_name": "Create Tests",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "View Test Results",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Transcript/Permanent Record": [
+      {
+        "permission_name": "Access Transcripts",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "Edit Transcripts",
+        "options": ["No", "Yes"]
+      }
+    ],
+    "Users": [
+      {
+        "permission_name": "Create Users",
+        "options": ["No", "Yes"]
+      },
+      {
+        "permission_name": "Manage User Access",
+        "options": ["No", "Yes"]
+      }
+    ]
+  }
+  

@@ -1,0 +1,313 @@
+[2025-03-17 23:41:10] Entering showLoginForm method
+[2025-03-17 23:41:10] User already logged in, redirecting to: /
+[2025-03-17 23:42:23] Entering showLoginForm method
+[2025-03-17 23:42:23] Rendering view with title: Login
+[2025-03-17 23:42:23] Rendering view: Login with layout: AuthLayout
+[2025-03-17 23:42:23] Rendering completed for view: Login
+[2025-03-17 23:42:23] Session after render: Array
+(
+)
+
+[2025-03-17 23:42:26] Entering showLoginForm method
+[2025-03-17 23:42:26] Rendering view with title: Login
+[2025-03-17 23:42:26] Rendering view: Login with layout: AuthLayout
+[2025-03-17 23:42:26] Rendering completed for view: Login
+[2025-03-17 23:42:26] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-17 23:42:34] Entering processLogin method
+[2025-03-17 23:42:34] Session before redirect: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-17 23:42:34] Received email: devops@districtomni.com
+[2025-03-17 23:42:34] User authenticated successfully: devops@districtomni.com
+[2025-03-17 23:42:34] User ID stored in session: 1
+[2025-03-17 23:42:34] Session after storing useri id right before redirect: Array
+(
+    [intended_url] => /
+    [user_id] => 1
+)
+
+[2025-03-17 23:42:34] Redirecting to: /
+[2025-03-18 00:02:18] Entering showLoginForm method
+[2025-03-18 00:02:18] User already logged in, redirecting to: /dashboard
+[2025-03-18 00:02:25] Entering processLogin method
+[2025-03-18 00:02:25] Session before redirect: Array
+(
+)
+
+[2025-03-18 00:02:25] Received email: devops@districtomni.com
+[2025-03-18 00:02:25] User authenticated successfully: devops@districtomni.com
+[2025-03-18 00:02:25] User ID stored in session: 1
+[2025-03-18 00:02:25] Session after storing useri id right before redirect: Array
+(
+    [user_id] => 1
+)
+
+[2025-03-18 00:02:25] Redirecting to: /dashboard
+[2025-03-18 00:03:10] Entering processLogin method
+[2025-03-18 00:03:10] Session before redirect: Array
+(
+    [user_id] => 1
+)
+
+[2025-03-18 00:03:10] Received email: devops@districtomni.com
+[2025-03-18 00:03:11] User authenticated successfully: devops@districtomni.com
+[2025-03-18 00:03:11] User ID stored in session: 1
+[2025-03-18 00:03:11] Session after storing useri id right before redirect: Array
+(
+    [user_id] => 1
+)
+
+[2025-03-18 00:03:11] Redirecting to: /dashboard
+[2025-03-18 00:04:03] Entering processLogin method
+[2025-03-18 00:04:03] Session before redirect: Array
+(
+    [user_id] => 1
+)
+
+[2025-03-18 00:04:03] Received email: 
+[2025-03-18 00:04:03] Error: Email or password is missing
+[2025-03-18 00:04:21] Entering processLogin method
+[2025-03-18 00:04:21] Session before redirect: Array
+(
+    [user_id] => 1
+    [flash] => Array
+        (
+            [0] => Array
+                (
+                    [type] => error
+                    [message] => Email and password are required.
+                )
+
+        )
+
+)
+
+[2025-03-18 00:04:21] Received email: devops@districtomni.com
+[2025-03-18 00:04:21] User authenticated successfully: devops@districtomni.com
+[2025-03-18 00:04:21] User ID stored in session: 1
+[2025-03-18 00:04:21] Session after storing useri id right before redirect: Array
+(
+    [user_id] => 1
+    [flash] => Array
+        (
+            [0] => Array
+                (
+                    [type] => error
+                    [message] => Email and password are required.
+                )
+
+        )
+
+)
+
+[2025-03-18 00:04:21] Redirecting to: /dashboard
+[2025-03-18 00:06:12] Entering processLogin method
+[2025-03-18 00:06:12] Session before redirect: Array
+(
+    [user_id] => 1
+    [flash] => Array
+        (
+            [0] => Array
+                (
+                    [type] => error
+                    [message] => Email and password are required.
+                )
+
+        )
+
+)
+
+[2025-03-18 00:06:12] Received email: devops@districtomni.com
+[2025-03-18 00:06:12] User authenticated successfully: devops@districtomni.com
+[2025-03-18 00:06:12] User ID stored in session: 1
+[2025-03-18 00:06:12] Session after storing user id right before redirect: Array
+(
+    [user_id] => 1
+    [flash] => Array
+        (
+            [0] => Array
+                (
+                    [type] => error
+                    [message] => Email and password are required.
+                )
+
+        )
+
+)
+
+[2025-03-18 00:06:12] Redirecting to: /dashboard
+[2025-03-18 00:06:21] Entering showLoginForm method
+[2025-03-18 00:06:21] User already logged in, redirecting to: /dashboard
+[2025-03-18 00:07:23] Entering processLogin method
+[2025-03-18 00:07:23] Session before redirect: Array
+(
+    [user_id] => 1
+    [flash] => Array
+        (
+            [0] => Array
+                (
+                    [type] => error
+                    [message] => Email and password are required.
+                )
+
+        )
+
+)
+
+[2025-03-18 00:07:23] Received email: devops@districtomni.com
+[2025-03-18 00:07:23] User authenticated successfully: devops@districtomni.com
+[2025-03-18 00:07:23] User ID stored in session: 1
+[2025-03-18 00:07:23] Session after storing user id right before redirect: Array
+(
+    [user_id] => 1
+    [flash] => Array
+        (
+            [0] => Array
+                (
+                    [type] => error
+                    [message] => Email and password are required.
+                )
+
+        )
+
+)
+
+[2025-03-18 00:07:23] Redirecting to: /dashboard
+[2025-03-18 00:08:54] Entering showLoginForm method
+[2025-03-18 00:08:54] User already logged in, redirecting to: /dashboard
+[2025-03-19 01:02:09] Entering showLoginForm method
+[2025-03-19 01:02:09] Rendering view with title: Login
+[2025-03-19 01:02:09] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:02:09] Rendering completed for view: Login
+[2025-03-19 01:02:09] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:02:27] Entering showLoginForm method
+[2025-03-19 01:02:27] Rendering view with title: Login
+[2025-03-19 01:02:27] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:02:27] Rendering completed for view: Login
+[2025-03-19 01:02:27] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:02:40] Entering showLoginForm method
+[2025-03-19 01:02:40] Rendering view with title: Login
+[2025-03-19 01:02:40] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:02:40] Rendering completed for view: Login
+[2025-03-19 01:02:40] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:02:54] Entering showLoginForm method
+[2025-03-19 01:02:54] Rendering view with title: Login
+[2025-03-19 01:02:54] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:02:54] Rendering completed for view: Login
+[2025-03-19 01:02:54] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:04:07] Entering showLoginForm method
+[2025-03-19 01:04:07] Rendering view with title: Login
+[2025-03-19 01:04:07] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:04:07] Rendering completed for view: Login
+[2025-03-19 01:04:07] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:04:33] Entering showLoginForm method
+[2025-03-19 01:04:33] Rendering view with title: Login
+[2025-03-19 01:04:33] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:04:33] Rendering completed for view: Login
+[2025-03-19 01:04:33] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:06:49] Entering showLoginForm method
+[2025-03-19 01:06:49] Rendering view with title: Login
+[2025-03-19 01:06:49] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:06:49] Rendering completed for view: Login
+[2025-03-19 01:06:49] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:07:16] Entering showLoginForm method
+[2025-03-19 01:07:16] Rendering view with title: Login
+[2025-03-19 01:07:16] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:07:16] Rendering completed for view: Login
+[2025-03-19 01:07:16] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:08:05] Entering showLoginForm method
+[2025-03-19 01:08:05] Rendering view with title: Login
+[2025-03-19 01:08:05] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:08:05] Rendering completed for view: Login
+[2025-03-19 01:08:05] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:08:30] Entering processLogin method
+[2025-03-19 01:08:30] Session before redirect: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:08:30] Received email: devops@districtomni.com
+[2025-03-19 01:08:31] User authenticated successfully: devops@districtomni.com
+[2025-03-19 01:08:31] User ID stored in session: 1
+[2025-03-19 01:08:31] Session after storing user id right before redirect: Array
+(
+    [intended_url] => /
+    [user_id] => 1
+)
+
+[2025-03-19 01:08:31] Redirecting to: /
+[2025-03-19 01:12:26] Entering showLoginForm method
+[2025-03-19 01:12:26] Rendering view with title: Login
+[2025-03-19 01:12:26] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:12:26] Rendering completed for view: Login
+[2025-03-19 01:12:26] Session after render: Array
+(
+)
+
+[2025-03-19 01:12:29] Entering showLoginForm method
+[2025-03-19 01:12:29] Rendering view with title: Login
+[2025-03-19 01:12:29] Rendering view: Login with layout: AuthLayout
+[2025-03-19 01:12:29] Rendering completed for view: Login
+[2025-03-19 01:12:29] Session after render: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:12:35] Entering processLogin method
+[2025-03-19 01:12:35] Session before redirect: Array
+(
+    [intended_url] => /
+)
+
+[2025-03-19 01:12:35] Received email: devops@districtomni.com
+[2025-03-19 01:12:35] User authenticated successfully: devops@districtomni.com
+[2025-03-19 01:12:35] User ID stored in session: 1
+[2025-03-19 01:12:35] Session after storing user id right before redirect: Array
+(
+    [intended_url] => /
+    [user_id] => 1
+)
+
+[2025-03-19 01:12:35] Redirecting to: /

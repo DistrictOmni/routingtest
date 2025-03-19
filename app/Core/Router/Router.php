@@ -1,7 +1,6 @@
 <?php
 namespace App\Core\Router;
 
-use App\Core\Middleware\AuthMiddleware;
 
 class Router
 {
@@ -50,27 +49,31 @@ class Router
     public function dispatch(string $method, string $uri)
     {
         $method = strtoupper($method);
-        $handler = $this->routes[$method][$uri] ?? null;
     
+        $handler = $this->routes[$method][$uri] ?? null;
+        
         if (!$handler) {
             header("HTTP/1.0 404 Not Found");
             echo "404 Not Found";
             return;
         }
-    
-        // Skip auth check ONLY for the login route
-        if ($uri !== '/auth/login') {
-            $user = AuthMiddleware::handle();  // user is optional or you can store it somewhere
-        }
-    
+        
         if (is_callable($handler)) {
             return call_user_func($handler);
         }
-    
+        
         [$class, $action] = $handler;
         $controller = new $class();
         return $controller->$action();
     }
     
-    
+
+    /**
+     * Get the URL for a given URI
+     */
+    public function getUrl(string $uri): string
+    {
+        // Check if route exists and return it, otherwise return '#'
+        return isset($this->routes['GET'][$uri]) ? $uri : '#';
+    }
 }

@@ -1,15 +1,23 @@
 <?php
 
 use App\Core\Router\Router;
-use App\Core\Auth\Controllers\AuthController;
-use App\Core\Auth\Services\AuthService;
+use App\Modules\Auth\Controllers\AuthController;
 use App\Core\Database\Database;
-
 return function (Router $router) {
-    $database = new Database(); // Create the Database instance
-    $authService = new AuthService($database); // Pass the Database instance to AuthService
-    $authController = new AuthController($authService, $database); // Pass both AuthService and Database to AuthController
+    /*************************************************
+     * API AUTHENTICATION & AUTHORIZATION ROUTES
+     *************************************************/
 
-    $router->post('/api/register', [$authController, 'attemptLogin']);
-    $router->post('/api/login', [$authController, 'attemptLogin']);
+     $router->group('/api', function($router) {
+        $router->post('/api/auth/login', function () {
+            $authController = new AuthController();
+            return $authController->processLogin();
+        });
+        
+    
+        $router->post('/auth/logout', [AuthController::class, 'logout']);
+    });
+    
+ 
+   
 };
